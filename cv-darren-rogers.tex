@@ -1,0 +1,243 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Ten Seconds Resume/CV
+% LaTeX Template
+% Version 1.0 (2019-12-10)
+%
+% Original author: Piotr Kowalski
+%
+% License: (see included LICENSE file)
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%----------------------------------------------------------------------------------------
+%   PACKAGES AND OTHER DOCUMENT CONFIGURATIONS
+%----------------------------------------------------------------------------------------
+
+\documentclass[letterpaper]{tenseconds} % a4paper for A4 or letterpaper
+
+% Command for printing skill overview bubbles
+\newcommand\skills{ 
+~
+    \smartdiagram[bubble diagram]{
+        \textbf{Development}\\\textbf{Operations},
+        \textbf{Networking}\\\textbf{~~~Services~~~},
+        \textbf{Source}\\\textbf{Control}\\\textbf{Systems},
+        \textbf{Containers}\\\textbf{and}\\\textbf{Virtualization},
+        \textbf{Infrastructure}\\\textbf{Automation},
+        \textbf{Cloud}\\\textbf{~~~Services~~~},
+        \textbf{System}\\\textbf{Administration},
+        \textbf{Database}\\\textbf{Management}
+    }
+}
+
+% Hard skill bars
+\programming{{C $\textbullet$ C++  $\textbullet$ Java / 3}, {Bash $\textbullet$ Python $\textbullet$ \large Perl / 5}, {HTML5 $\textbullet$ JS $\textbullet$ CSS / 5}, {\LaTeX $\textbullet$ PHP $\textbullet$ SQL / 3.5}}
+
+\hardskills{{GitHub $\textbullet$ GitLab $\textbullet$ BitBucket / 5}, {Jenkins $\textbullet$ GitLab Pipelines $\textbullet$ Travis / 4}, {Ansible $\textbullet$ Puppet $\textbullet$ Vagrant / 4}, {Docker $\textbullet$ LXD / 4}, {Swarm $\textbullet$ OpenStack $\textbullet$ Kubernetes / 3.5}, {AWS $\textbullet$ DigitalOcean $\textbullet$ GCloud / 3.5}, {JAMstack (Jekyll) $\textbullet$ LAMP $\textbullet$ Wordpress / 4.5}}
+
+
+% Projects text
+\projects{
+    \textbf{Single System Image Cluster} - Master Thesis: Parallel Signal Processing using the Single System Image Cluster \\
+    \textbf{PiSensor} - [GitHub] NodeJS server for the DS18B20 temperature sensors on the Raspberry Pi \\
+    \textbf{Docker Wordpress-cli Sage} - [GitHub] WordPress-cli Sage development environment based on Docker, composer, yarn, webpack and ssh \\
+    \textbf{Traefik Compose} - [GitHub] Docker Compose to setup Traefik ingress for web traffic load balancing and high availability \\
+    \textbf{bitroniq.github.io} - [GitHub] Jekyll theme based JAMstack page for personal site, blog, and portfolio \\
+    \textbf{README template} - [GitHub] Markdown template to use in projects, with semantic versioning, release history, dynamic badges etc.
+}
+
+%----------------------------------------------------------------------------------------
+%    PERSONAL INFORMATION
+%----------------------------------------------------------------------------------------
+% If you don't need one or more of the below, just remove the content leaving the command, e.g. \cvnumberphone{}
+
+\cvname{Darren Rogers} % Your name
+\cvjobtitle{ Senior Site Reliability/DevOps Engineer } % Job
+% title/career
+\profilepic{} % Profile picture
+\cvdate{}
+\cvlinkedin{/in/darrenrogers1}
+\cvgithub{}
+\cvnumberphone{(+353) 86 806 7825} % Phone number
+\cvsite{} % Personal website
+\cvmail{darren.t.rogers@gmail.com} % Email address
+\cvaddress{119 Hansfield, \newline D15 A3K4, \newline Ireland}
+%\cvinstagram{piotr.kowalski.prv} % Email address
+
+%----------------------------------------------------------------------------------------
+
+\begin{document}
+
+\makeprofile % Print the sidebar
+
+\section{Profile}
+%----------------------------------------------------------------------------------------
+%    PROFILE
+%----------------------------------------------------------------------------------------
+\textnormal{\faInfo} An IT professional with over 20 years of experience working in a variety of Site Reliability, DevOps, System Administration and Architectural roles.
+
+\textnormal{\faInfo} Experienced in technology fields including Containerisation, Automation, Software Development Operations, Enterprise Storage, Clusters, Database Administration and Unix/Linux Administration.
+
+\textnormal{\faInfo} Experienced in many Internet Technologies such as TCP/IP, DNS, packet filtering and more that underpin Cloud Infrastructure.
+
+\textnormal{\textcolor{materialamber}{\faTrophy}} Member of the team that built the Guinness World Record-certified Largest Data Warehouse (2012).
+
+
+
+\section{Education}
+%----------------------------------------------------------------------------------------
+%    EDUCATION
+%----------------------------------------------------------------------------------------
+\begin{twenty} % Environment for a list with descriptions
+	\twentyitem
+	{2013 - 2018}
+	{}
+	{\href{http://www.open.ac.uk/courses/computing-it/degrees/bsc-computing-it-q62}{BSc (Hons) Computing and IT} \textnormal{(1st Class)}}
+	{\href{http://www.open.ac.uk}{Open University}}
+	{}
+	{}
+	%\twentyitem{<dates>}{<title>}{<organization>}{<location>}{<description>}
+\end{twenty}
+
+\section{Experience}
+%----------------------------------------------------------------------------------------
+%    EXPERIENCE
+%----------------------------------------------------------------------------------------
+\begin{twenty} % Environment for a list with descriptions
+	\twentyitem
+	{Jul 2016 -}
+	{Now}
+	{Senior Site Reliability Engineer}
+	{\href{https://www.ibm.com/watson-health}{IBM (Watson Health)}; later \href{https://merative.com}{Merative}, Dublin, Ireland}
+	%{In Watson Health, I took responsibility for the design and implementation of our SaaS care management solution's deployment, taking the application code from the development teams and providing a deployment mechanism to install it into its supporting infrastructure. Coming in immediately after the release of the product, my first task was to provide an upgrade mechanism. Later projects included migrating from a virtual machine-based deployment to a containerised solution, and the launch of related products and services. As of October 2022, IBM Watson Health is now a standalone company called Merative }
+	{As of October 2022, IBM Watson Health is now a standalone company called Merative }
+	{
+		\begin{itemize}
+			\item Ensuring monthly releases are created on time, with all required updates, fixes and documentation
+			\item Design and implement migration from VM-based infrastructure to Kubernetes-based container deployments
+			\item Design, implement and maintain operational processes around database user management, backups and high availability
+			\item Manage Cloud Development/Test environment, including access to deployments in Kubernetes namespaces and service connectivity
+			\item Maintain integrated GitOps environment, with Jenkins implementation as front end
+			\item Provide third-level support for customer deployments
+			\item Provide HIPAA-compliant database audit policy
+			\item Primary point of contact for all database and DevOps implementation queries
+			\item Mentor other technical staff
+		\end{itemize}
+	}
+	\twentyitem
+	{May 2009 -}
+	{Jul 2016}
+	{Db2 Infrastructure Lead}
+	{\href{https://www.ibm.com/db2}{IBM (Software Group), Dublin, Ireland}}
+	%{Upon joining IBM in 2009, I was given two challenges: scale up the existing Development/QA infrastructure to accommodate the expansion of the department in Ireland; and to work with the senior technical team in Canada to design, build and install a system to challenge for the Guinness World Record for Largest Data Warehouse. The Dev/QA environment was increased from a handful of x86 servers to approximately fifty mixed hardware type (x86 and IBM POWER) servers backed by several hundred terabytes of storage in multiple SANs, all connected by private networks. The role also involves:}
+	{}
+	{\begin{itemize}
+		 \item System administration for all the Development and QA systems in Ireland, consisting of approximately fifty mixed hardware type (x86 and IBM POWER) servers backed by several hundred terabytes of storage in multiple SANs
+		 \item Maintenance of security compliance on all systems%, including scanning for vulnerabilities, applying patches and workarounds where required, and working with external audit teams to audit the systems where required
+		 \item Administration of the replicated ClearCase source code repository%,ensuring it is available to local users and synchronised in a timely fashion with remote sites
+		 \item Implementation of systems availability and performance monitoring
+		 \item Design and implementation of new system projects, from simple expansion of the environment to the set up of new technologies,such as the implementation of a test system replicating a geographically dispersed database cluster
+		 \item Design, implementation and administration of a central authentication system%, and development of a best practices guide for keeping it secure
+		 \item Performing data centre operations support for our computer lab%: assisting guest users with installation, managing the IP address space and monitoring power and cooling
+		 \item Provide first point of contact for technical queries relating to linux, UNIX or general infrastructure queries from within the department, and from the larger Irish lab team
+		 \item Mentor other technical staff
+	\end{itemize}}
+\end{twenty}
+
+
+
+%\section{Research}
+%%----------------------------------------------------------------------------------------
+%%    RESEARCH
+%%----------------------------------------------------------------------------------------
+%\begin{twenty}
+%    \twentyitem
+%        {2015 - 2017}
+%        {}
+%        {MSc. Candidate, Graduate Research Assistant}
+%        {\href{http://www.uoguelph.ca/}{University of Guelph}}
+%        {}
+%        {
+%        \textbf{Thesis}: Data Integration from Multiple Historical Sources to Study Canadian Casualties of WWI
+%        {\begin{itemize}
+%        \item Proposed a scalable stepwise deterministic method to reliably integrate datasets without labeled data. The method performs comparably with a method that incorporates a Support Vector Machine
+%        \item Constructed a rich longitudinal dataset to enable comphrehensive time-series analyses about WWI Canadian society and military
+%        \item \textbf{Tools}: R, Python, scikit-learn, BeautifulSoup, pandas, matplotlib \vspace{2mm}
+%        \end{itemize}}
+%        }
+%\end{twenty}
+
+
+
+%----------------------------------------------------------------------------------------
+%    SECOND PAGE EXAMPLE
+%----------------------------------------------------------------------------------------
+
+\newpage % Start a new page
+
+\makesecondprofile % Print the sidebar
+
+\begin{twenty} % Environment for a list with descriptions
+	\twentyitem
+	{Jan 2006 -}
+	{May 2009}
+	{Senior Systems Administrator/Architect}
+	{\href{https://www.imagine.ie/}{Irish Broadband (later Imagine Ltd), Dublin, Ireland}}
+	{Here I had the opportunity to build up an application infrastructure from scratch to the requirements of the business This role involved:}
+	{\begin{itemize}
+		\item Architecture design, build and installation of the combined BSS/OSS hardware platform.
+		\item Architecture design, build and installation of the company webservers and online ordering portal
+		\item Implementation of backup system, system monitoring and systems performance monitoring
+		\item Database administration of core CRM databases, including backups, replication and optimisation
+		\item Development of applications to integrate third party provisioning systems with the BSS/OSS platform, in perl. These interfaces included provisioning support for VOIP and DSL connections and relevant customer communications
+		\item Day to day third level support for end users of the BSS/OSS system
+		\item Initial troubleshooting and resolution (in partnership with our software vendor) of application issues with the BSS/OSS system
+		\item Bug logging, testing and validation of bugfixes provided by our software vendor
+		\item Systems administration for Web Development team, including installation and maintenance of development and staging environments.
+		\item Training and advice in MySQL, general SQL and general linux usage for our Web Development team, Data Analyst and Windows LAN administrators. I also provide advice and support in emergencies to our IP Engineering and Network Operations teams, in respect of Unix services and MySQL databases.
+		\end{itemize}}
+	\\
+	\twentyitem
+	{Dec 2000 -}
+	{Dec 2008}
+	{System Administrator/Senior System Administrator/Team Leader}
+	{Alphyra Group Ltd, Dublin, Ireland}
+	{Chief duties included:}
+	{\begin{itemize}
+		\item Responsibility for day to day operation of systems providing Electronic Funds Transfer (EFT) and Pre Paid Cellular (PPC) top up codes to a large terminal estate across six European territories.
+		\item Network management and connectivity for both the Irish and other European offices. Maintenance of external nameservers and mailservers, and VPN connectivity.
+		\item System maintenance including regular maintenance on all databases, backups, and upgrades to existing systems.
+		\item Disaster recovery for production services is provided at an off site location, which is our responsibility. I was involved in the initial design and deployment of the DR site, and oversee current operations
+		\item Stock monitoring and management of the PPC codes, including encryption, decryption, loading and stock level monitoring.
+		\item Functional testing/QA of new host system and terminal application software is provided by us.
+		\item I am also responsible for the general administration of the Systems Administration team. This would include details of attendance,payroll, annual leave, etc. In the absence of the System Manager,I would also deputise for him.
+		\item This role also requires a rota'd period of on call, where I would be available 24 hours a day for a week-long period.
+		\item The Team Leader role, taken on in June 2004, includes a general responsibility for two business units (Ireland and Roaming, the latter including four European territories), with a dedicated team of two Systems Administrators working for me. From a system point of view, direct responsibility is also taken for database administration (primarily MySQL, with some Oracle) across all systems.
+		\end{itemize}}
+	\\
+%	\twentyitem
+%	{Apr 2000 -}
+%	{Dec 2000}
+%	{Helpdesk Customer Service Assistant}
+%	{Alphyra Group Ltd, Dublin, Ireland}
+%	{I was one of a team dealing with customer queries relating to the
+%	functionality and operation of the terminal estate, particularly the counter top units, in Ireland. It was here that I became familiar
+%	with both the management of our terminal estate, and the linux operating system. My duties included providing information to
+%	customers, minor terminal maintenance and the escalation of issues to the appropriate departments.}
+%	{}
+%	\\
+%	\twentyitem
+%	{Nov 1993 -}
+%	{Apr 2000}
+%	{Various Roles}
+%	{Virgin Retail Ltd, Dublin, Ireland; London, UK}
+%	{I held various positions in Virgin Retail, starting as a Temporary
+%	Sales Assistant and rising to the position of Support Department
+%	Manager in a Virgin Megastore. I worked in several locations, including North London, Heathrow Airport and Dublin. Duties ranged from normal retail sales dealing with the public to stockroom and cash office management. Prior to leaving Virgin, I was the stock check manager for the Republic of Ireland,responsible for the training of staff and oversight of the electronic stock check process in each Irish store.}
+%	{}
+
+	        
+	%\twentyitem{<dates>}{<title>}{<location>}{<description>}
+\end{twenty}
+
+\end{document}

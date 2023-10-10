@@ -244,8 +244,16 @@
               \end{array}
               $} 
             & \cvnumberphone\\}
-            
-      \ifthenelse{\equal{\href{\cvsite}{\cvsite}}{}}{}{
+
+      \ifthenelse{\equal{\cvaddress}{}}{}{
+              {$
+                \begin{array}{l}
+                \hspace{4mm} \huge \textnormal{\faMapMarker}
+                \end{array}
+              $}
+           & \cvaddress\\}
+
+      \ifthenelse{\equal{\cvsite}{}}{}{
             {$
               \begin{array}{l}
               \hspace{2.8mm} \huge \textnormal{\textcolor{test}{\faGlobe}}

@@ -1,6 +1,6 @@
 SHELL   = /bin/sh
 
-FILE0   = cv-piotr-kowalski
+FILE0   = cv-darren-rogers
 TEX     = $(FILE0).tex
 XDV     = $(FILE0).xdv
 PDF     = $(FILE0).pdf
