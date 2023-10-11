@@ -46,7 +46,7 @@ jobs:
         run: |
           make image
           make clean
-        if: "${{ env.BUILD_TYPE == 'push' }}"
+        if: "${{ github.event_name == 'push' }}"
 
       - name: Checkin changes
         run: |
@@ -54,4 +54,4 @@ jobs:
           git config --global user.email 'ghactions@users.noreply.github.com'
           git commit -am "[cicd] Checkin new PDF/image"
           git push
-        if: "${{ env.BUILD_TYPE == 'push' }}"
+        if: "${{ github.event_name == 'push' }}"
