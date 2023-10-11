@@ -36,6 +36,9 @@ jobs:
           BASE_BRANCH: ${{ github.base_ref }}
         if: "${{ github.event_name == 'pull_request' }}"
 
+      - name: Install xelatex
+        run: sudo apt-get install -y texlive-xetex texlive-fonts-extra texlive-pstricks texmaker ghostscript
+
       - name: Create PDF
         run: make all
 
