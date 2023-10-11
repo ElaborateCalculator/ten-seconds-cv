@@ -166,6 +166,19 @@
 		\end{tikzpicture}
 	}
 }
+% Programming skills without LOC indicator
+\newcommand\programmingNoLOC[1]{
+    \renewcommand{\programming}{
+        \begin{tikzpicture}
+            \foreach [count=\i] \x/\y in {#1}{
+                \draw[fill=maingray,maingray] (0,\i) rectangle (6,\i+0.4);
+                \draw[fill=white,mainblue](0,\i) rectangle (\y,\i+0.4);
+                \node [above right] at (0,\i+0.35) {\x};
+            }
+        \end{tikzpicture}
+    }
+}
+
 \newcommand\projects[1]{ 
 	\renewcommand{\projects}{
 		{#1}
@@ -300,14 +313,15 @@
 
 	\skills
         
-        %------------------------------------------------
-        
-        \vspace{3mm}
-       
-	 {\large \textbf{Programming}} 
 
-		 \programming
-      
+        %------------------------------------------------
+
+        \vspace{3mm}
+
+        {\large \textbf{Technology}}
+
+        \hardskills
+
   \end{textblock}
 }
 
@@ -328,26 +342,26 @@
     %------------------------------------------------
     \vspace{4mm}
     \profilesection{Skills}{4cm}
-    
+
     {\large \textbf{Overview}}
 
 	\skills
-        
-        %------------------------------------------------
-        
-        \vspace{3mm}
-       
-	 {\large \textbf{Hard Skills}} 
 
-		 \hardskills
-         
+    %------------------------------------------------
+
+    \vspace{3mm}
+
+    {\large \textbf{Programming}}
+
+    \programming
+
         \vspace{4mm}
         \profilesection{Projects}{3cm}
 
-        {\large \textbf{Open Source}} 
-        
+        {\large \textbf{Key Work Projects}}
+
         \projects
-      
+
   \end{textblock}
 }
 

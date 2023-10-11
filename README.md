@@ -1,11 +1,14 @@
 # ten-seconds-cv
+
+Based on [bitroniq/ten-seconds-cv](https://github.com/bitroniq/ten-seconds-cv)
+
 > A LaTeX resume/cv template for DevOps Engineer to make quick update and
 > pdf creation
 
 This template I use for my own resume/CV.
 
 
-![CV Screenshot](cv-piotr-kowalski.png)
+![CV Screenshot](cv-darren-rogers.png)
 
 ## Install pre-requisites (Windows)
 
