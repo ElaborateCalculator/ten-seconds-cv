@@ -1,0 +1,54 @@
+name: ElaborateCalculator/ten-seconds-cv
+on:
+  workflow_dispatch:
+    inputs:
+      buildType:
+        description: 'Build type: "pull_request" to simulate a PR build, "push" for full build'
+        required: true
+        default: 'push'
+        type: choice
+        options:
+          - push
+          - pull_request
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+
+concurrency:
+  group: ${{ github.head_ref || github.run_id }}
+  cancel-in-progress: true
+
+jobs:
+  build:
+    name: Build
+    runs-on: ubuntu-latest
+    steps:
+      # Steps run on PRs and merges
+      - name: checkout
+        uses: actions/checkout@v3
+
+      - name: Set base branch name for PRs
+        run: echo "GHE_BRANCH=${BASE_BRANCH#refs/heads/}" >> $GITHUB_ENV
+        env:
+          BASE_BRANCH: ${{ github.base_ref }}
+        if: "${{ github.event_name == 'pull_request' }}"
+
+      - name: Create PDF
+        run: make all
+
+      - name: Create readme image
+        run: |
+          make image
+          make clean
+        if: "${{ env.BUILD_TYPE == 'push' }}"
+
+      - name: Checkin changes
+        run: |
+          git config --global user.name 'GH Actions'
+          git config --global user.email 'ghactions@users.noreply.github.com'
+          git commit -am "[cicd] Checkin new PDF/image"
+          git push
+        if: "${{ env.BUILD_TYPE == 'push' }}"
