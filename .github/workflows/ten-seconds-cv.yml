@@ -37,7 +37,7 @@ jobs:
         if: "${{ github.event_name == 'pull_request' }}"
 
       - name: Install xelatex
-        run: sudo apt-get install -y texlive-xetex
+        run: sudo apt-get install -y texlive-xetex texlive-fonts-extra
 
       - name: Create PDF
         run: make all
