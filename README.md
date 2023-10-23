@@ -1,6 +1,6 @@
 # ten-seconds-cv
 
-![ten-seconds-cv](https://github.com/ElaborateCalculator/ten-seconds-cv/actions/workflows/ten-seconds-cv/badge.svg)
+![ten-seconds-cv](https://github.com/ElaborateCalculator/ten-seconds-cv/actions/workflows/ten-seconds-cv.yml/badge.svg)
 
 Based on [bitroniq/ten-seconds-cv](https://github.com/bitroniq/ten-seconds-cv)
 
