@@ -1,5 +1,7 @@
 # ten-seconds-cv
 
+![ten-seconds-cv](https://github.com/ElaborateCalculator/ten-seconds-cv/actions/workflows/ten-seconds-cv/badge.svg)
+
 Based on [bitroniq/ten-seconds-cv](https://github.com/bitroniq/ten-seconds-cv)
 
 > A LaTeX resume/cv template for DevOps Engineer to make quick update and
