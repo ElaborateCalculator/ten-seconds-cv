@@ -1,0 +1,11 @@
+Dear Hiring Manager
+
+I'm a 20+ year engineer, starting as a system administrator and arriving in a DevOps/SRE role via database administration, network administration, system & storage architecture design, physical datacentre management and many other hardware and software areas. I've written code in multiple languages, stored it in source control systems from CVS to subversion to git, and deployed it into production; by hand in the long ago days, to using tools like Jenkins and orchestration like Kubernetes and Helm now.
+
+Along the way I've been fortunate enough to work with some excellent teams, and some interesting projects, all of which I've tried to learn from; one of those projects even gave us a Guinness World Record. Now I'm looking for a new opportunity to apply my skills in a new role, and carry on learning.
+
+Thanks for taking the time to read this letter and my resume. I hope to hear from you soon.
+
+Yours faithfully,
+Darren
+
