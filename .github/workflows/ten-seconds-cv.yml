@@ -28,7 +28,7 @@ jobs:
     steps:
       # Steps run on PRs and merges
       - name: checkout
-        uses: actions/checkout@v4
+        uses: actions/checkout@v6
 
       - name: Set base branch name for PRs
         run: echo "GHE_BRANCH=${BASE_BRANCH#refs/heads/}" >> $GITHUB_ENV
