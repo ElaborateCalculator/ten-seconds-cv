@@ -21,6 +21,9 @@ concurrency:
   group: ${{ github.head_ref || github.run_id }}
   cancel-in-progress: true
 
+permissions:
+  contents: read
+
 jobs:
   build:
     name: Build
@@ -29,6 +32,8 @@ jobs:
       # Steps run on PRs and merges
       - name: checkout
         uses: actions/checkout@v6
+        with:
+          persist-credentials: false
 
       - name: Set base branch name for PRs
         run: echo "GHE_BRANCH=${BASE_BRANCH#refs/heads/}" >> $GITHUB_ENV
@@ -50,10 +55,24 @@ jobs:
           make clean
         if: "${{ github.event_name == 'push' }}"
 
-      - name: Checkin changes
+      - name: Checkin generated artifacts
+        env:
+          CI_PUSH_TOKEN: ${{ secrets.CI_PUSH_TOKEN }}
         run: |
+          if git diff --quiet -- cv-darren-rogers.pdf cv-darren-rogers.png; then
+            echo "Generated artifacts are unchanged; nothing to commit."
+            exit 0
+          fi
+
+          if [ -z "$CI_PUSH_TOKEN" ]; then
+            echo "CI_PUSH_TOKEN secret is not configured."
+            exit 1
+          fi
+
           git config --global user.name 'GH Actions'
           git config --global user.email 'ghactions@users.noreply.github.com'
-          git commit -am "[cicd] Checkin new PDF/image"
-          git push
+          git add cv-darren-rogers.pdf cv-darren-rogers.png
+          git commit -m "[cicd] Checkin new PDF/image"
+          git remote set-url origin "https://x-access-token:${CI_PUSH_TOKEN}@github.com/${GITHUB_REPOSITORY}.git"
+          git push origin HEAD:${GITHUB_REF#refs/heads/}
         if: "${{ github.event_name == 'push' }}"
