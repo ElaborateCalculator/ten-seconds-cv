@@ -28,7 +28,7 @@ jobs:
     steps:
       # Steps run on PRs and merges
       - name: checkout
-        uses: actions/checkout@v3
+        uses: actions/checkout@v6
 
       - name: Set base branch name for PRs
         run: echo "GHE_BRANCH=${BASE_BRANCH#refs/heads/}" >> $GITHUB_ENV
@@ -36,8 +36,10 @@ jobs:
           BASE_BRANCH: ${{ github.base_ref }}
         if: "${{ github.event_name == 'pull_request' }}"
 
-      - name: Install xelatex
-        run: sudo apt-get install -y texlive-xetex texlive-fonts-extra texlive-pstricks texmaker ghostscript
+      - name: Install LaTeX dependencies
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y texlive-xetex texlive-fonts-extra texlive-pstricks ghostscript
 
       - name: Create PDF
         run: make all
